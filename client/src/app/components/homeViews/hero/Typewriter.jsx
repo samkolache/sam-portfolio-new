@@ -25,7 +25,7 @@ const Typewriter = () => {
 
   return (
     <div>
-      <p className="text-5xl font-bold text-brand">
+      <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand">
         {adjectives[exampleIndex].split("").map((l, i) => (
           <motion.span
             initial={{
@@ -36,7 +36,7 @@ const Typewriter = () => {
             }}
             transition={{
               delay: i * LETTER_DELAY,
-              duration: 0.3, // Adjust duration for smooth appearance
+              duration: 0.3,
             }}
             className="relative"
             key={`${exampleIndex}-${i}`}
@@ -52,10 +52,10 @@ const Typewriter = () => {
               transition={{
                 delay: i * LETTER_DELAY,
                 times: [0, 0.1, 1],
-                duration: BOX_FADE_DURATION, // Adjust duration to match the letter appearance
+                duration: BOX_FADE_DURATION,
                 ease: "easeInOut",
               }}
-              className="absolute bottom-[3px] left-[1px] right-0 top-[3px] bg-white"
+              className="absolute bottom-[2px] left-[1px] right-0 top-[2px] bg-white"
             />
           </motion.span>
         ))}

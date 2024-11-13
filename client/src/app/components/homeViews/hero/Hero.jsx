@@ -4,6 +4,7 @@ import SkillShowcase from './SkillShowcase';
 import DownArrow from './DownArrow'
 
 const Hero = () => {
+  
   return (
     <>
       <section className="max-w-6xl text-center py-52 mx-auto">

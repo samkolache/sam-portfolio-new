@@ -3,53 +3,53 @@ import React from 'react'
 import Link from 'next/link'
 import { XMarkIcon } from '@heroicons/react/16/solid'
 
-
-const MobileNav = ({isMobileOpen, handleToggle}) => {
-
-
+const MobileNav = ({ isMobileOpen, handleToggle }) => {
   return (
-    <div className = 
-    {`md:hidden bg-boxes min-h-screen w-1/2 fixed top-0 right-0 flex justify-center items-center 
-    ${isMobileOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out z-50`}>
-      <div className='flex flex-col space-y-16'>
-        {/* title */}
+    <div
+      className={`md:hidden bg-boxes min-h-screen w-3/4 fixed top-0 right-0 flex justify-center items-center 
+      ${isMobileOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out z-50 px-8`}
+    >
+      <div className='flex flex-col space-y-12'>
+        {/* Title */}
         <div>
-          <p className='text-white text-[11px] border-b pb-2 border-white border-opacity-50'>NAVIGATION</p>
+          <p className='text-white text-xs border-b pb-2 border-white border-opacity-50'>NAVIGATION</p>
         </div>
-          
 
-          <ul className='gap-5 flex flex-col text-4xl'>
-            <li>
-                <Link href = "/about" className='nav-link text-white font-light'>About</Link>
-            </li>
-            <li>
-                <Link href = "/about" className='nav-link text-white font-light'>Experience</Link>
-            </li>
-            <li>
-            <Link href = "/about" className='nav-link text-white font-light'>Blog</Link>
-            </li>
-            <li>
-            <Link href = "/about" className='nav-link text-white font-light'>Contact</Link>
-            </li>
-          </ul>
+        {/* Navigation Links */}
+        <ul className='gap-5 flex flex-col text-3xl'>
+          <li>
+            <Link href="/about" className='nav-link text-white font-light' onClick={handleToggle}>About</Link>
+          </li>
+          <li>
+            <Link href="/experience" className='nav-link text-white font-light' onClick={handleToggle}>Experience</Link>
+          </li>
+          <li>
+            <Link href="/blog" className='nav-link text-white font-light' onClick={handleToggle}>Blog</Link>
+          </li>
+          <li>
+            <Link href="/#contact" className='nav-link text-white font-light' onClick={handleToggle}>Contact</Link>
+          </li>
+        </ul>
 
-          <ul className='flex gap-5 text-sm'>
-            <li>
-              <a href = "https://www.linkedin.com/in/sameer-z-kotecha/" className='text-white'>LinkedIn</a>
-            </li>
-            <li>
-              <a href = "https://github.com/samkolache" className='text-white'>Github</a>
-            </li>
-            <li>
-              <a href = "https://www.linkedin.com/in/sameer-z-kotecha/" className='text-white'>Resume</a>
-            </li>
-          </ul>
-        
+        {/* Social Links */}
+        <ul className='flex gap-5 text-sm'>
+          <li>
+            <a href="https://www.linkedin.com/in/sameer-z-kotecha/" className='text-white'>LinkedIn</a>
+          </li>
+          <li>
+            <a href="https://github.com/samkolache" className='text-white'>Github</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/sameer-z-kotecha/" className='text-white'>Resume</a>
+          </li>
+        </ul>
       </div>
-        <XMarkIcon
+      
+      {/* Close Icon */}
+      <XMarkIcon
         className='w-8 h-8 text-white absolute top-5 right-5 cursor-pointer'
         onClick={handleToggle}
-        />
+      />
     </div>
   )
 }

@@ -34,26 +34,26 @@ const page = () => {
           <h2 className="text-3xl text-white">How Important is UI/UX in AI</h2>
           <p className='text-[#d1d5db]'>AI applications have exploded in the past two years, so we don't have much research to define the most optimal UX 
             when using these products. When we look at UI/UX for a website, we focus on navigation and the layout of the website to convert
-            and create a smooth process. When a user uses an AI application, the output from the application is solely based on the user's input and learning algorithims.
+            and create a smooth process. When a user uses an AI application, the output from the application is solely based on the user's input and learning algorithms.
             This means we need to design our applications to help users understand why the AI behaves in certain ways, under different inputs. 
           </p>
           <p className='text-[#d1d5db]'>
-            Not only do we have to worry about usability, but we also need to improve transparency between the product and the user. Using an AI tool "correctly" can be
-            unpredictable and complex. We can improve transparency by giving the user more control like control mechanisms to adjust the AI-driven recommendations.
-            The logic of the output an AI tool provides isn't always visible, which can further contribute to the lack of trust in the tool
+            Not only do we have to worry about usability, but we also need to improve and maintain transparency between the product and the user. Using an AI tool "correctly" can be
+            unpredictable and complex. We can improve transparency by giving the user options like control mechanisms to adjust the AI-driven recommendations.
+            The logic of the output an AI tool provides isn't always visible, which can further contribute to the lack of trust in the tool.
           </p>
           <p className='text-[#d1d5db]'>
-            To sum it up, we need the user to understand how the AI gets to their output based on the type of input they provide. The process from start to finished should
-            be clear based on the UI the user is able to see. Let's go through a few ways to address some of these challneges we spoke about above.
+            To sum it up, we need the user to understand how the AI gets to their output based on the type of input they provide. The process from start to finish should
+            be clear based on the UI the user can to see. Let's go through a few ways to address some of these challenges we spoke about above.
           </p>
         </div>
         <div className='max-w-4xl space-y-6 mt-4'>
         <h2 className="text-3xl text-white">Key Principles for Effective AI UI/UX Design</h2>
         <h3 className='text-2xl text-white'>Show, Don't Tell</h3>
         <p className='text-[#d1d5db]'>Rather than the user giving input and just getting output, allow the user to see how this input was achieved. We don't need to
-          show the intense ML algorithims, but things like explaintions of reccomendations and visualizations of key data factors may be helpful
-          to see. A simple button titled "Why this suggestion" can provide inisight on how the AI got to this output. This will increase both usability
-          and the transparency between the AI and the user.
+          show the intense ML algorithms, but things like explanations of recommendations and visualizations of key data factors may be helpful
+          to see. A simple button titled "Why this suggestion" can provide insight into how the AI got to this output. This will increase both usability
+          and transparency between the AI and the user.
         </p>
         <h3 className='text-2xl text-white'>Empower the User</h3>
         <p className='text-[#d1d5db]'>AI applications should allow the user to customize or influence the outcomes, allowing the user to tailor 
@@ -68,8 +68,8 @@ const page = () => {
         </div>
         <div className='max-w-4xl space-y-6 mt-4'>
         <h2 className="text-3xl text-white">Conclusion</h2>
-        <p className='text-[#d1d5db]'>Creating a great UI/UX for AI is more than aesthetics, it's about creating an experience that allows the user to understand and trust the model
-          As AI continues to get faster and more intelligent, thoughtful design will play a massive role in how much the user can take advatnage of these great tools.
+        <p className='text-[#d1d5db]'>Creating a great UI/UX for AI is more than aesthetics, it's about creating an experience that allows the user to understand and trust the model.
+          As AI continues to get faster and more intelligent, thoughtful design will play a massive role in how much the user can take advantage of these great tools.
         </p>
         </div>
       </section>

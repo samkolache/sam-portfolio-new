@@ -5,6 +5,13 @@ import Image from "next/image";
 
 const DownArrow = () => {
 
+  const scrollToSection = () => {
+    const section = document.getElementById('introduction');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <motion.div
       initial={{ scale: 1 }}
@@ -14,6 +21,7 @@ const DownArrow = () => {
         repeat: Infinity, // Loop the animation
         ease: "easeInOut",
       }}
+      onClick={scrollToSection}
     >
       <Image 
       src="/down-arrow.svg" 
