@@ -6,7 +6,7 @@ import { XMarkIcon } from '@heroicons/react/16/solid'
 const MobileNav = ({ isMobileOpen, handleToggle }) => {
   return (
     <div
-      className={`md:hidden bg-boxes min-h-screen w-3/4 fixed top-0 right-0 flex justify-center items-center 
+      className={`md:hidden bg-[#0E101A] min-h-screen w-3/4 fixed top-0 right-0 flex justify-center items-center 
       ${isMobileOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out z-50 px-8`}
     >
       <div className='flex flex-col space-y-12'>
@@ -40,7 +40,7 @@ const MobileNav = ({ isMobileOpen, handleToggle }) => {
             <a href="https://github.com/samkolache" className='text-white'>Github</a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/sameer-z-kotecha/" className='text-white'>Resume</a>
+            <a href="https://samk-resume.tiiny.site/" className='text-white'>Resume</a>
           </li>
         </ul>
       </div>

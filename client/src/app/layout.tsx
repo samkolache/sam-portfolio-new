@@ -1,6 +1,4 @@
-
-import { Montserrat} from 'next/font/google';
-
+import { Montserrat } from 'next/font/google';
 import "./globals.css";
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/Footer';
@@ -17,17 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-[#02040D]">
-
-      
-        <body
-          className={`${montserrat.className}`}
-        >
-          <Navbar />
-            {children}
-            <Footer />
-        </body>
-        
-     
+      <body className={`${montserrat.className} flex flex-col min-h-screen`}>
+        <Navbar />
+        <main className="flex-grow">{children}</main> {/* Main content grows to push footer down */}
+        <Footer />
+      </body>
     </html>
   );
 }

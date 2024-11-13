@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className='flex justify-between items-center py-5 px-8 md:px-16 sticky top-0 bg-boxes z-50'>
+      <nav className='flex justify-between items-center py-5 px-8 md:px-16 sticky top-0 bg-[#0E101A] z-50'>
         <TransitionLink href="/">
           <Image
             src='/logo.svg'
