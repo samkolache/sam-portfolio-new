@@ -26,7 +26,7 @@ const page = () => {
                         alt="Picture of Sam Kotecha"
                         width={500}
                         height={500}
-                        className="rounded-lg hidden md:block"
+                        className="rounded-lg hidden"
                     />
                 </div>
             </div>
