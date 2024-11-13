@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import './navbar.css'
 import { Bars3Icon } from '@heroicons/react/16/solid'
 import MobileNav from './MobileNav'
