@@ -11,7 +11,7 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4;
+  bottom: -4px;
   width: 0;
   height: 2px;
   background-color: #6366F1; /* Customize color */
