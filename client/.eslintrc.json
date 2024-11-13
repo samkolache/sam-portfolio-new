@@ -1,6 +1,4 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"],
-  "rules": {
-    "*": "off"
-  }
+  "extends": ["next", "next/core-web-vitals", "next/typescript"],
+  "rules": {}
 }
