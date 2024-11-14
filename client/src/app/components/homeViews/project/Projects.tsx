@@ -40,7 +40,7 @@ const Projects = () => {
                             using Auth.js.
                         </p>
                         <div className='text-white border rounded-md p-3 text-sm md:text-base'>
-                            <span className='text-brand font-semibold'>Currently working on: </span>Creating the dashboard for users to track and visualize their data (learning GraphQL and Apollo).
+                            <span className='text-brand font-semibold'>Currently working on: </span>Creating the dashboard for users to track and visualize their data (learning Recharts).
                         </div>
                     </div>
 
