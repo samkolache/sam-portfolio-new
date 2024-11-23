@@ -1,8 +1,11 @@
 'use client'
-import React from 'react'
+import React, {useContext} from 'react'
+import { ThemeContext } from '@/contexts/ThemeContext'
 import Link  from "next/link"
 import {useRouter} from "next/navigation"
+import "./navbar/navbar.css"
 import "../globals.css"
+import clsx from 'clsx'
 
 
 function sleep(ms) {
@@ -30,10 +33,23 @@ const TransitionLink = ({
         await sleep(500)
         body?.classList.remove('page-transition')
     }
+
+    const {isDark} = useContext(ThemeContext);
+
   return (
     <Link 
     onClick={handleTransition}
-    href={href} {...props}>{children}</Link>
+    href={href} {...props}
+    className = {clsx(
+      'nav-link font-light',
+      {
+        'text-white' : isDark,
+        'text-black' : !isDark
+      }
+    )}
+    >
+    {children}
+    </Link>
   )
 }
 

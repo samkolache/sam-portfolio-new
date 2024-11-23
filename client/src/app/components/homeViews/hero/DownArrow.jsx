@@ -1,7 +1,14 @@
 'use client'
 import { motion } from "framer-motion";
-import React from "react";
+import React, {useContext} from "react";
 import Image from "next/image";
+import clsx from "clsx";
+
+import { ThemeContext } from "@/contexts/ThemeContext";
+
+import { ArrowDownCircleIcon } from "@heroicons/react/16/solid";
+
+
 
 const DownArrow = () => {
 
@@ -11,6 +18,8 @@ const DownArrow = () => {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const {isDark} = useContext(ThemeContext);
 
   return (
     <motion.div
@@ -23,12 +32,13 @@ const DownArrow = () => {
       }}
       onClick={scrollToSection}
     >
-      <Image 
-      src="/down-arrow.svg" 
-      alt="Pulsating SVG" 
-      width={90} 
-      height={90}
-      className="cursor-pointer" />
+      <ArrowDownCircleIcon className = {clsx(
+        "w-24 h-24 cursor-pointer",
+        {
+          'text-brand' : isDark,
+          'text-brandDark': !isDark
+        }
+      )} />
     </motion.div>
   );
 };

@@ -1,12 +1,16 @@
 'use client'
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
+
+import { ThemeContext } from '@/contexts/ThemeContext';
+import clsx from 'clsx';
 
 const LETTER_DELAY = 0.1; // Adjusted for better visibility
 const BOX_FADE_DURATION = 0.125;
 const SWAP_DELAY_IN_MS = 5500;
 
 const Typewriter = () => {
+  const {isDark} = useContext(ThemeContext)
   const [exampleIndex, setExampleIndex] = useState(0);
 
   const adjectives = [
@@ -25,7 +29,13 @@ const Typewriter = () => {
 
   return (
     <div>
-      <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand">
+      <p className = {clsx(
+        "text-3xl md:text-4xl lg:text-5xl font-bold text-brand",
+       { "text-brand" : isDark,
+        "text-brandDark" : !isDark,
+      }
+
+      )}>
         {adjectives[exampleIndex].split("").map((l, i) => (
           <motion.span
             initial={{
