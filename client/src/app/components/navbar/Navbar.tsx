@@ -8,6 +8,7 @@ import MobileNav from './MobileNav'
 import TransitionLink from "../TransitionLink"
 import clsx from 'clsx'
 
+
 const Navbar = () => {
   const [isMobileOpen, setMobileOpen] = useState(false)
 
@@ -15,6 +16,7 @@ const Navbar = () => {
 
   const {isDark, setIsDark} = useContext(ThemeContext)
   const handleTheme = () => {setIsDark(prev => !prev)}
+
 
   return (
     <>

@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { ThemeContext } from '@/contexts/ThemeContext';
 import clsx from 'clsx';
 
-const page = () => {
+const Page = () => {
 
     const {isDark} = useContext(ThemeContext);
 
@@ -71,4 +71,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
