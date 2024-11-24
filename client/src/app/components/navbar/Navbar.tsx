@@ -14,7 +14,7 @@ const Navbar = () => {
   const handleToggle = () => setMobileOpen(prev => !prev)
 
   const {isDark, setIsDark} = useContext(ThemeContext)
-  const handleTheme = () => setIsDark(prev => !prev)
+  const handleTheme = () => {setIsDark(prev => !prev)}
 
   return (
     <>
@@ -67,7 +67,15 @@ const Navbar = () => {
           </li>
         </ul>
         
-        <Bars3Icon className='md:hidden w-5 h-5 text-white cursor-pointer' onClick={handleToggle} />
+        <Bars3Icon 
+        className = {clsx(
+          'md:hidden w-5 h-5 cursor-pointer',
+          {
+            "text-white" : isDark,
+            "text-black" : !isDark,
+          }
+        )}
+        onClick={handleToggle} />
       </nav>
       
       <MobileNav isMobileOpen={isMobileOpen} handleToggle={handleToggle} />

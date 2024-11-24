@@ -6,6 +6,7 @@ import {useRouter} from "next/navigation"
 import "./navbar/navbar.css"
 import "../globals.css"
 import clsx from 'clsx'
+import { usePathname } from 'next/navigation'
 
 
 function sleep(ms) {
@@ -19,6 +20,10 @@ const TransitionLink = ({
 }) => {
 
     const router = useRouter();
+    const pathname = usePathname();
+    if (pathname === href) {
+      console.log(`Current pathname: ${pathname}, Link href: ${href}`);
+    }
 
     const handleTransition = async (e) => {
         e.preventDefault();
@@ -33,6 +38,7 @@ const TransitionLink = ({
         await sleep(500)
         body?.classList.remove('page-transition')
     }
+   
 
     const {isDark} = useContext(ThemeContext);
 
@@ -41,10 +47,14 @@ const TransitionLink = ({
     onClick={handleTransition}
     href={href} {...props}
     className = {clsx(
-      'nav-link font-light',
+      'nav-link',
       {
-        'text-white' : isDark,
-        'text-black' : !isDark
+        'text-brand font-semibold' : pathname === href && isDark,
+        'text-brandDark font-semibold' : pathname === href && !isDark,
+      },
+      {
+        'text-white font-light': isDark && pathname !== href, 
+        'text-black font-light': !isDark && pathname !== href,
       }
     )}
     >
