@@ -26,23 +26,14 @@ const Navbar = () => {
         }
       )}>
         <TransitionLink href="/">
-        {isDark 
-        ?
+        
         <Image
-        src='/logo.svg'
-        alt='Logo for Sam Kotecha portfolio site'
-        width={74}
-        height={29}
-      />
-      :
-      <Image
-        src='/dark-logo.svg'
+        src = {isDark ? '/logo.svg' : '/dark-logo.svg'}
         alt='Logo for Sam Kotecha portfolio site'
         width={74}
         height={29}
       />
       
-       }
           
         </TransitionLink>
         

@@ -1,21 +1,40 @@
 'use client'
 import { motion } from "framer-motion";
-import React from "react";
+import React, {useContext} from "react";
+
+import clsx from "clsx";
+import { ThemeContext } from "@/contexts/ThemeContext";
 
 const AnimatedBtn = ({href, innerTxt}) => {
 
+  const {isDark} = useContext(ThemeContext);
 
   return (
+
+    
     <motion.a
         href = {href}
-        className='relative border border-brand border-opacity-80 rounded-lg text-white px-4 py-2 text-lg overflow-hidden'
+        className = {clsx(
+          'relative border border-opacity-80 rounded-lg px-4 py-2 text-lg overflow-hidden',
+          {
+            "border-brand text-white" : isDark,
+            "border-brandDark hover:text-white text-black" : !isDark
+          }
+        )}
         target="_blank"
         initial="rest"
         whileHover="hover"
         animate="rest"
     >
         <motion.div
-        className="absolute inset-0 bg-brand"
+        className = {clsx(
+          "absolute inset-0",
+          {
+            "bg-brand" : isDark,
+            "bg-brandDark" : !isDark
+
+          }
+        )}
         style={{ transformOrigin: 'left center' }}
         variants={{
           rest: { scaleX: 0 },         // No fill initially

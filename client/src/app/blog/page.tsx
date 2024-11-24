@@ -1,14 +1,26 @@
+'use client'
 import { div } from 'framer-motion/client'
-import React from 'react'
+import React, {useContext} from 'react'
 import "../globals.css"
 import Link from 'next/link'
 
-const page = () => {
+import clsx from 'clsx'; 
+import { ThemeContext } from '@/contexts/ThemeContext';
+
+
+const Page = () => {
+    const {isDark} = useContext(ThemeContext)
   return (
     <div className='py-32 relative'>
         <div className='color-blur absolute top-[-350px] left-[10%] h-[1000px] w-[1000px]'></div>
         
-        <h1 className="text-4xl md:text-6xl pl-8 md:pl-16 font-bold text-white">blog.</h1>
+        <h1 className = {clsx(
+            "text-4xl md:text-6xl pl-8 md:pl-16 font-bold",
+            {
+                "text-white" : isDark,
+                "text-black" : !isDark,
+            }
+        )}>blog.</h1>
 
         {/* Blog Container */}
         <div className="flex flex-wrap justify-center space-y-8 md:space-y-0 md:space-x-8 py-20 px-4">
@@ -30,17 +42,42 @@ const page = () => {
 }
 
 const BlogPreview = ({ title, cat, prev, link }) => {
+    const {isDark} = useContext(ThemeContext)
     return (
         <Link href={link} className='cursor-pointer'>
-            <div className='m-4 max-w-[400px] md:max-w-[600px] space-y-3 bg-opacity-10 bg-gray-800 p-4 rounded-lg hover:shadow-lg transition-shadow duration-200'>
+            <div className = {clsx(
+                'm-4 max-w-[400px] md:max-w-[600px] space-y-3 bg-opacity-77 p-4 rounded-lg hover:shadow-lg transition-shadow duration-200',
+                {
+                    "bg-[#0E101B]" : isDark,
+                    "bg-[#E4E6F1]" : !isDark
+                }
+            )}>
                 <div className='flex flex-col space-y-1'>
-                    <h2 className='text-xl md:text-2xl text-white font-semibold'>{title}</h2>
-                    <p className='text-sm md:text-base text-white font-light'>{cat}</p>
+                    <h2 className = {clsx(
+                        'text-xl md:text-2xl font-semibold',
+                        {
+                            "text-white" : isDark,
+                            "text-black" : !isDark,
+                        }
+                    )}>{title}</h2>
+                    <p className = {clsx(
+                        'text-sm md:text-base font-light',
+                        {
+                            "text-white" : isDark,
+                            "text-black" : !isDark,
+                        }
+                    )}>{cat}</p>
                 </div>
-                <p className="text-base md:text-lg text-white font-light">{prev}</p>
+                <p className = {clsx(
+                    "text-base md:text-lg font-light",
+                    {
+                        "text-white" : isDark,
+                        "text-black" : !isDark,
+                    }
+                )}>{prev}</p>
             </div>
         </Link>
     )
 }
 
-export default page
+export default Page

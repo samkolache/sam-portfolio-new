@@ -1,13 +1,16 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
 import "../globals.css";
 
+import { ThemeContext } from '@/contexts/ThemeContext';
+
 const Page = () => {
     const [selected, updateSelected] = useState('spotify');
+    const {isDark} = useContext(ThemeContext)
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 items-center relative py-20 px-4 md:px-16">
@@ -20,7 +23,13 @@ const Page = () => {
                 )}
             ></div>
             <div className="space-y-10">
-                <h1 className="text-4xl md:text-6xl font-bold text-white">experience.</h1>
+                <h1 className = {clsx(
+                    "text-4xl md:text-6xl font-bold",
+                    {
+                        "text-white" : isDark,
+                        "text-black" : !isDark,
+                    }
+                )}>experience.</h1>
                 {["careerCertified", "spotify", "uh"].map((job) => (
                     <motion.div
                         key={job}
@@ -45,12 +54,25 @@ const Page = () => {
                         )}>
                             {job === "careerCertified" ? "Career Certified" : job === "spotify" ? "Spotify" : "The University of Houston"}
                         </h2>
-                        <h3 className="text-lg md:text-xl text-white font-medium">
+                        <h3 className = {clsx(
+                            "text-lg md:text-xl font-medium",
+                            {
+                                "text-white" : isDark,
+                                "text-black" : !isDark
+                            }
+
+                        )}>
                             {job === "careerCertified" && "UI/UX Intern"}
                             {job === "spotify" && "Systems Administrator Intern"}
                             {job === "uh" && "Student Front-end Developer"}
                         </h3>
-                        <h4 className="text-base md:text-lg text-white">
+                        <h4 className = {clsx(
+                            "text-base md:text-lg",
+                            {
+                                "text-white" : isDark,
+                                "text-black" : !isDark
+                            }
+                        )}>
                             {job === "careerCertified" && "May 2024 - December 2024"}
                             {job === "spotify" && "May 2023 - August 2023"}
                             {job === "uh" && "June 2022 - May 2024"}
@@ -66,6 +88,8 @@ const Page = () => {
 };
 
 const JobInformation = ({ selected }) => {
+
+    const {isDark} = useContext(ThemeContext)
     const jobData = {
         careerCertified: {
             resp: [
@@ -114,21 +138,57 @@ const JobInformation = ({ selected }) => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="bg-[#0E101B] bg-opacity-77 space-y-5 rounded-lg max-w-8xl p-6"
+            className = {clsx(
+                "bg-opacity-77 space-y-5 rounded-lg max-w-8xl p-6",
+                {
+                    "bg-[#0E101B]" : isDark,
+                    "bg-[#E4E6F1]" : !isDark
+                }
+            )}
         >
-            <h2 className="text-white text-2xl font-bold">Job Responsibilities:</h2>
-            <ul className="list-disc text-white pl-5">
+            <h2 className = {clsx(
+                "text-2xl font-bold",
+                {
+                    "text-white" : isDark,
+                    "text-black": !isDark
+                }
+            )}>Job Responsibilities:</h2>
+            <ul className = {clsx(
+                "list-disc pl-5",
+                {
+                    "text-white" : isDark,
+                    "text-black": !isDark
+                }
+            )}>
                 {jobInfo.resp.map((resp, index) => (
                     <li key={index} className="mt-2">{resp}</li>
                 ))}
             </ul>
             <div className="p-4">
-                <h2 className="text-white text-2xl font-bold">Skills & Tools</h2>
+                <h2 className = {clsx(
+                    "text-2xl font-bold",
+                    {
+                        "text-white" : isDark,
+                        "text-black": !isDark
+                    }
+                )}>Skills & Tools</h2>
                 <div className="grid grid-cols-2 sm:flex sm:justify-center gap-6 mt-4">
                     {jobInfo.tools.map((tool, index) => (
-                        <div key={index} className="flex gap-2 py-2 px-8 items-center justify-center border border-white border-opacity-30 rounded-md">
+                        <div key={index} className = {clsx(
+                            "flex gap-2 py-2 px-8 items-center justify-center border  border-opacity-30 rounded-md",
+                            {
+                                "border-white" : isDark,
+                                "border-black" : !isDark
+                            }
+                        )}>
                             <Image src={tool.img} alt={tool.name} width={30} height={30} />
-                            <p className="text-white text-sm">{tool.name}</p>
+                            <p className = {clsx(
+                                "text-sm",
+                                {
+                                    "text-white" : isDark,
+                                    "text-black": !isDark
+                                }
+                            )}>{tool.name}</p>
                         </div>
                     ))}
                 </div>

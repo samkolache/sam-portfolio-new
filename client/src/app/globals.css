@@ -36,6 +36,18 @@ body {
   overflow: hidden;
 }
 
+.bg-colors-light {
+  background: linear-gradient(
+    to bottom,
+    rgba(99, 102, 241, 0) 0%,      /* Start with full transparency at the top */
+    rgba(99, 102, 241, 0.3) 20%,   /* Gradually introduce #6366F1 */
+    rgba(99, 102, 241, 0.6) 50%,   /* Darker shade of #6366F1 */
+    #f2f4fd 80%                    /* Full color at the bottom */
+  );
+  position: relative;
+  overflow: hidden;
+}
+
 .bg-colors::before {
   content: "";
   position: absolute;
