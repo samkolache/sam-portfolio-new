@@ -2,7 +2,7 @@
 import React, { useState, useContext } from 'react'
 import { ThemeContext } from '@/contexts/ThemeContext'
 import Image from 'next/image'
-import './navbar.css'
+import './navbar.css' 
 import { Bars3Icon, SunIcon, MoonIcon } from '@heroicons/react/16/solid'
 import MobileNav from './MobileNav'
 import TransitionLink from "../TransitionLink"
@@ -15,16 +15,18 @@ const Navbar = () => {
   const handleToggle = () => setMobileOpen(prev => !prev)
 
   const {isDark, setIsDark} = useContext(ThemeContext)
-  const handleTheme = () => {setIsDark(prev => !prev)}
+  const handleTheme = () => {
+    setIsDark(prev => !prev)
+  }
 
 
   return (
     <>
       <nav className= {clsx(
-        'flex justify-between items-center py-5 px-8 md:px-16 sticky top-0 z-50', 
+        'flex justify-between items-center py-5 px-8 md:px-16 sticky top-0 z-20', 
         {
           "bg-[#0E101A]" : isDark,
-          "bg-lightBg" : !isDark
+          "bg-[#F8F9FB]" : !isDark
         }
       )}>
         <TransitionLink href="/">
