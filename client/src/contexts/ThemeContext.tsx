@@ -1,6 +1,9 @@
-import { createContext } from "react";
+import { createContext, Dispatch, SetStateAction } from "react";
 
-export const ThemeContext = createContext({
-    isDark: true,
-    setIsDark: () => {}
-}); //true is dark
+export const ThemeContext = createContext<{
+  isDark: boolean;
+  setIsDark: Dispatch<SetStateAction<boolean>>;
+}>({
+  isDark: true,
+  setIsDark: () => {} // Placeholder function for initialization
+});

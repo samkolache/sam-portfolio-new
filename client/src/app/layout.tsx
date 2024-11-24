@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <ThemeContext.Provider value = {{
       isDark,
-      setIsDark
+      setIsDark 
     }}>
       <html lang="en" className = {clsx(
         {
